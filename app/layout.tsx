@@ -3,8 +3,8 @@ import { Work_Sans } from "next/font/google";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Sample",
-  description: "Sample",
+  title: "Technical Test",
+  description: "Technical test",
   authors: [{ name: "Ali Asadollahi", url: "https://github.com/aliasadolahi74" }],
 };
 
