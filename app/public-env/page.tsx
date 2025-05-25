@@ -5,7 +5,20 @@ import { useRuntimeConfig } from "@/src/core/hooks/useRuntimeConfig";
 const PublicEnv = () => {
   const env = useRuntimeConfig();
 
-  return <h1>{env?.NEXT_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_URL}</h1>;
+  return (
+    <table className='table'>
+      <tbody>
+        <tr>
+          <td>NILVA_APP_PUBLIC_API_URL</td>
+          <td>{env?.NILVA_APP_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_URL}</td>
+        </tr>
+        <tr>
+          <td>NILVA_APP_PRIVATE_API_URL</td>
+          <td>{env?.NILVA_APP_PRIVATE_API_URL || process.env.PRIVATE_API_URL}</td>
+        </tr>
+      </tbody>
+    </table>
+  );
 };
 
 export default PublicEnv;

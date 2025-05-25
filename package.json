@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "./generate-runtime-config.sh && next dev",
+    "dev": "next dev",
     "build": "next build",
     "start": "./generate-runtime-config.sh && next start",
     "lint": "next lint",
