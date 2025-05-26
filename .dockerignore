@@ -1,2 +1,10 @@
-/public/runtime-config.json
-/.env.local
+*
+
+!/app/
+!/src/
+!/next.config.mjs
+!/yarn.lock
+!/tailwind.config.ts
+!/tsconfig.json
+!/package.json
+!/entrypoint.sh

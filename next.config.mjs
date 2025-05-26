@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    PRIVATE_API_URL: process.env.PRIVATE_API_URL,
+    NILVA_APP_PUBLIC_API_URL: process.env.NILVA_APP_PUBLIC_API_URL,
+    NILVA_APP_PRIVATE_API_URL: process.env.NILVA_APP_PRIVATE_API_URL,
   }
 };
 

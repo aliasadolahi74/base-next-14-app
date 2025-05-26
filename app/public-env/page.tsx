@@ -7,15 +7,19 @@ const PublicEnv = () => {
 
   return (
     <table className='table'>
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr>
-          <td>NILVA_APP_PUBLIC_API_URL</td>
-          <td>{env?.NILVA_APP_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_URL}</td>
-        </tr>
-        <tr>
-          <td>NILVA_APP_PRIVATE_API_URL</td>
-          <td>{env?.NILVA_APP_PRIVATE_API_URL || process.env.PRIVATE_API_URL}</td>
-        </tr>
+        {env && Object.entries(env).map(([key, value]) => (
+          <tr key={key}>
+            <td>{key}</td>
+            <td>{value}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

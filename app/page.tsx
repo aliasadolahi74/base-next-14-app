@@ -1,20 +1,23 @@
 import React from "react";
 
 export default async function Home() {
-  const fetchPublicEnv = await fetch("http://localhost:3000/api/env", { cache: "no-store" });
-  const response = await fetchPublicEnv.json();
-
+  const res = await fetch("http://localhost:3000/api/env", { cache: "no-store" });
+  const response = await res.json();
   return (
     <table className='table'>
+      <thead>
+        <tr>
+          <th>Variable</th>
+          <th>Value</th>
+        </tr>
+      </thead>
       <tbody>
-        <tr>
-          <td>NILVA_APP_PUBLIC_API_URL</td>
-          <td>{response?.NILVA_APP_PUBLIC_API_URL || process.env.NEXT_PUBLIC_API_URL}</td>
-        </tr>
-        <tr>
-          <td>NILVA_APP_PRIVATE_API_URL</td>
-          <td>{response?.NILVA_APP_PRIVATE_API_URL || process.env.PRIVATE_API_URL}</td>
-        </tr>
+        {response && Object.entries(response).map(([key, value]) => (
+          <tr key={key}>
+            <td>{key}</td>
+            <td>{String(value)}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );
